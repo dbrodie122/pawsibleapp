@@ -1,0 +1,17 @@
+We need to:
+1. Connect the DB to the MT
+2. Factor out config details into appsettings.json
+3. Download entity framework
+4. implement database first creation of model objects
+5. DOWNLOAD THE POWER TOOLS (?)
+6. Add DB context to DI container
+7. Inject the DB context to our controller 
+(where does the logic live? If i make a DB querying object thath as methods that get shit off my DB tables, where does that object live?)
+8. Write our queries to retrieve the needed data.
+9. Write the route for getting pets
+10. send the data back through the GET method for getting a pet.
+11. From front end, add a call to the service/getPets endpoint.
+12. Create a simple table component for recieving/displaying the data
+13. Render the component on page load - should be responsive.
+
+
