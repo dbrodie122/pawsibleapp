@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using pawsible_api.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace pawsible_api
 {
@@ -26,6 +28,10 @@ namespace pawsible_api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //TODO: Add this to a JSON document in future to make it configurable
+            var connection = @"Server=HOWARDROARK\SQLEXPRESS;Database=Pawsible;Trusted_Connection=True;ConnectRetryCount=0";
+            services.AddDbContext<PawsibleContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
