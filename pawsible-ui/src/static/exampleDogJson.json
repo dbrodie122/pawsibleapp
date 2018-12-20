@@ -1,0 +1,30 @@
+[
+    {
+        "petId": 1,
+        "petName": "Happy Chan",
+        "breed": "Korean/Chinese",
+        "ownerName": "David",
+        "notes": "If unhappy, feed snacks"
+    },
+    {
+        "petId": 2,
+        "petName": "Meat Beast",
+        "breed": "Pug",
+        "ownerName": "David",
+        "notes": "If unhappy, squish. But not too much!"
+    },
+    {
+        "petId": 3,
+        "petName": "The Doginator",
+        "breed": "Saint Bernard",
+        "ownerName": "JohnBlackburn",
+        "notes": "Warning, dog may contain alcohol."
+    },
+    {
+        "petId": 5,
+        "petName": "ThisDogHasNoLove",
+        "breed": "Pug",
+        "ownerName": "none",
+        "notes": "Sadness lingers here."
+    }
+]
