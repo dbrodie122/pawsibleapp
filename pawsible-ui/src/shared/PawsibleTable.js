@@ -1,10 +1,20 @@
 import React from 'react';
 
-const renderDogs = function(tableData){
-    return <h1>Test</h1>
+const renderDogRows = (tableData) => {
+    return tableData.map((pet) => {
+        return (
+         <tr key={pet.petId}>
+             <td>{pet.petId}</td>
+             <td>{pet.petName}</td> 
+             <td>{pet.breed}</td>
+             <td>{pet.ownerName}</td>
+             <td>{pet.notes}</td>
+         </tr>
+        );
+     })
 }
 
-function PawsibleTable(props){
+const PawsibleTable = (props) => {
     return(
         <table>
             <tbody>
@@ -15,18 +25,8 @@ function PawsibleTable(props){
                     <th>Owner</th>
                     <th>Notes</th>
                 </tr>
-                {
-                    props.tableData.map((pet) => {
-                       return (
-                        <tr key={pet.petId}>
-                            <td>{pet.petId}</td>
-                            <td>{pet.petName}</td> 
-                            <td>{pet.breed}</td>
-                            <td>{pet.ownerName}</td>
-                            <td>{pet.notes}</td>
-                        </tr>
-                       );
-                    })
+                { 
+                   renderDogRows(props.tableData)
                 }
             </tbody>
         </table>

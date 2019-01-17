@@ -32,6 +32,14 @@ namespace pawsible_api
             //TODO: Add this to a JSON document in future to make it configurable
             var connection = @"Server=HOWARDROARK\SQLEXPRESS;Database=Pawsible;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<PawsibleContext>(options => options.UseSqlServer(connection));
+            services.AddCors(options => 
+                                    options.AddPolicy("AllowAllOrigins",
+                                        builder =>
+                                        {
+                                            builder.AllowAnyOrigin();
+                                        }));
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +54,7 @@ namespace pawsible_api
                 app.UseHsts();
             }
 
+            app.UseCors("AllowAllOrigins");
             app.UseHttpsRedirection();
             app.UseMvc();
         }
