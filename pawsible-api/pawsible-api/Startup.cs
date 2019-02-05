@@ -30,7 +30,7 @@ namespace pawsible_api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             //TODO: Add this to a JSON document in future to make it configurable
-            var connection = @"Server=HOWARDROARK\SQLEXPRESS;Database=Pawsible;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = Configuration.GetConnectionString("PawsibleDb");
             services.AddDbContext<PawsibleContext>(options => options.UseSqlServer(connection));
             services.AddCors(options => 
                                     options.AddPolicy("AllowAllOrigins",
