@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+- task: SqlAzureDacpacDeployment@1
+  displayName: Execute Azure SQL : DacpacTask
+  inputs:
+    azureSubscription: '<Azure service connection>'
+    ServerName: '<Database server name>'
+    DatabaseName: '<Database name>'
+    SqlUsername: '<SQL user name>'
+    SqlPassword: '<SQL user password>'
+    DacpacFile: '<Location of Dacpac file in $(Build.SourcesDirectory) after compilation>'
+    
+  displayName: 'Run a multi-line script'
