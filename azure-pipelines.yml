@@ -13,6 +13,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- script: |
 - task: SqlAzureDacpacDeployment@1
   displayName: Execute Azure SQL : DacpacTask
   inputs:
@@ -22,8 +23,5 @@ steps:
     SqlUsername: '<SQL user name>'
     SqlPassword: '<SQL user password>'
     DacpacFile: '<Location of Dacpac file in $(Build.SourcesDirectory) after compilation>'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
+    
   displayName: 'Run a multi-line script'
