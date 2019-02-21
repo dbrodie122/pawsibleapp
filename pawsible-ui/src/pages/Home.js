@@ -1,11 +1,13 @@
 import React from 'react';
 import PawsibleHeader from '../shared/PawsibleHeader';
 import PawsibleTable from '../shared/PawsibleTable';
+import  AddPet from '../shared/AddPet';
 
 function Home(props){
     return (
         <div>
             <PawsibleHeader text={'Pawsible Pets'}/>
+            <AddPet />
             <PawsibleTable tableData={props.pets}/>
         </div>
     )
