@@ -1,23 +1,29 @@
-import React, { Component } from 'react';
-import './App.css';
-import Home from './pages/Home';
+import React, { Component } from "react";
+import "./App.css";
+import Home from "./pages/Home";
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      pets: [],
+      pets: []
     };
+    this.getPets = this.getPets.bind(this);
   }
-  componentDidMount(){
-    fetch('https://localhost:44386/api/pets')
-    .then(response => response.json())
-    .then(json => this.setState({pets: json}));
+  componentDidMount() {
+    this.getPets();
   }
+
+  getPets() {
+    fetch("https://localhost:44386/api/pets")
+      .then(response => response.json())
+      .then(json => this.setState({ pets: json }));
+  }
+
   render() {
     return (
       <div className="App">
-        <Home pets={this.state.pets}/>
+        <Home pets={this.state.pets} getPets={this.getPets} />
       </div>
     );
   }

@@ -44,6 +44,7 @@ class AddPet extends React.Component {
       .then(response => {
         this.setState(this.initialState);
         console.log(response);
+        this.props.getPets();
         return response.json();
       })
       .catch(err => console.error(err));
