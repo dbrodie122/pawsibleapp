@@ -36,7 +36,9 @@ namespace pawsible_api
                                     options.AddPolicy("AllowAllOrigins",
                                         builder =>
                                         {
-                                            builder.AllowAnyOrigin();
+                                            builder.AllowAnyOrigin()
+                                            .AllowAnyMethod()
+                                            .AllowAnyHeader();
                                         }));
 
 
