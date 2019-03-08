@@ -17,11 +17,11 @@ steps:
 - task: SqlAzureDacpacDeployment@1
   displayName: Execute Azure SQL : DacpacTask
   inputs:
-    azureSubscription: '<Azure service connection>'
-    ServerName: '<Database server name>'
-    DatabaseName: '<Database name>'
-    SqlUsername: '<SQL user name>'
-    SqlPassword: '<SQL user password>'
-    DacpacFile: '<Location of Dacpac file in $(Build.SourcesDirectory) after compilation>'
+    azureSubscription: 'Pay-as-you-go'
+    ServerName: 'pawsibile.database.windows.net'
+    DatabaseName: 'Pawsible'
+    SqlUsername: 'PawsibleApp'
+    SqlPassword: 'AnythingIsPawsible123!'
+    DacpacFile: '/pawsible-db/bin/Debug/Pawsible.dacpac'
     
-  displayName: 'Run a multi-line script'
+  displayName: 'Run Database deployment with yml'
