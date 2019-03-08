@@ -23,5 +23,3 @@ steps:
     SqlUsername: 'PawsibleApp'
     SqlPassword: 'AnythingIsPawsible123!'
     DacpacFile: '/pawsible-db/bin/Debug/Pawsible.dacpac'
-    
-  displayName: 'Run Database deployment with yml'
