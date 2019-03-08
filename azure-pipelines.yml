@@ -17,7 +17,7 @@ steps:
 - task: SqlAzureDacpacDeployment@1
   displayName: Execute Azure SQL
   inputs:
-    azureSubscription: 'Pay-as-you-go'
+    azureSubscription: 'cc8b5566-0d2f-48b0-ba2c-2e5751b25a37'
     ServerName: 'pawsibile.database.windows.net'
     DatabaseName: 'Pawsible'
     SqlUsername: 'PawsibleApp'
